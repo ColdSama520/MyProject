@@ -3,6 +3,10 @@ server:
 
 
 spring:
+#  datasource:
+#    username: 60271
+#    password: haominglu520
+#    url: jdbc:mysql://bj-cdb-msahut1q.sql.tencentcdb.com:60271/JavaWeb
   datasource:
     username: root
     password: 123456
