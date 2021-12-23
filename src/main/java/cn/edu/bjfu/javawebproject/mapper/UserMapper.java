@@ -9,6 +9,9 @@ import java.util.List;
 public interface UserMapper {
 
     User selectUserById(String user_id);
+
+    User selectUserForLogin(String user_id, String user_pwd);
+
     List<User> selectUserAll();
 
     void addTeacherUser(String user_id);

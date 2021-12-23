@@ -8,8 +8,14 @@
             resultType="cn.edu.bjfu.javawebproject.pojo.User">
         select * from User where user_id = #{user_id}
     </select>
+
     <select id="selectUserAll" resultType="cn.edu.bjfu.javawebproject.pojo.User">
         select * from User
+    </select>
+
+    <select id="selectUserForLogin" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.User">
+        select * from User where user_id = #{user_id} and user_pwd = #{user_pwd}
     </select>
 
     <insert id="addTeacherUser" parameterType="String">

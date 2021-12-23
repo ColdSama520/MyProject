@@ -16,10 +16,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/login")
-    public int Login(User user){
-        if(userService.selectUserById(user.getUser_id()) != null)
-            return 200;//用户名已存在
-        return -1;
+    public String Login(User user){
+        return userService.selectUserForLogin(user.getUser_id(), user.getUser_pwd()).getUser_role();
     }
 
     @GetMapping("/{user_id}")

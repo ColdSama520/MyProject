@@ -16,6 +16,10 @@ public class UserService {
         return userMapper.selectUserById(user_id);
     }
 
+    public User selectUserForLogin(String user_id, String user_pwd){
+        return userMapper.selectUserForLogin(user_id, user_pwd);
+    }
+
     public List<User> selectUserAll(){
         return userMapper.selectUserAll();
     }
