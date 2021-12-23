@@ -18,7 +18,11 @@
         select * from User where user_id = #{user_id} and user_pwd = #{user_pwd}
     </select>
 
+    <update id="updateUserPwd" parameterType="String">
+        update User set user_pwd = #{user_pwd} where user_id = #{user_id}
+    </update>
+
     <insert id="addTeacherUser" parameterType="String">
-        insert into User (user_id,user_pwd,user_role) values(#{user_id},#{"123456"},#{"教师"})
+        insert into User (user_id,user_pwd,user_role) values(#{user_id},#{user_pwd},#{user_role})
     </insert>
 </mapper>

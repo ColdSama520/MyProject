@@ -12,8 +12,10 @@ public interface UserMapper {
 
     User selectUserForLogin(String user_id, String user_pwd);
 
+    void updateUserPwd(String user_id, String user_pwd);
+
     List<User> selectUserAll();
 
-    void addTeacherUser(String user_id);
+    void addTeacherUser(String user_id, String user_pwd, String user_role);
 
 }

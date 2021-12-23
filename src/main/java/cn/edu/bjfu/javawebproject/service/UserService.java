@@ -20,12 +20,16 @@ public class UserService {
         return userMapper.selectUserForLogin(user_id, user_pwd);
     }
 
+    public void updateUserPwd(String user_id, String user_pwd){
+        userMapper.updateUserPwd(user_id, user_pwd);
+    }
+
     public List<User> selectUserAll(){
         return userMapper.selectUserAll();
     }
 
-    public void addTeacherUser(String  user_id) {
-        userMapper.addTeacherUser(user_id);
+    public void addTeacherUser(String  user_id, String user_pwd, String user_role) {
+        userMapper.addTeacherUser(user_id, user_pwd, user_role);
     }
 
 }
