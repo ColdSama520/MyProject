@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api")
 public class UserController {
@@ -15,10 +16,10 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/login")
-    public String Login(User user){
-        System.out.println(user.getUser_id());
-        System.out.println(user.getUser_pwd());
-        return user.toString();
+    public int Login(User user){
+        if(userService.selectUserById(user.getUser_id()) != null)
+            return 200;//用户名已存在
+        return -1;
     }
 
     @GetMapping("/{user_id}")
