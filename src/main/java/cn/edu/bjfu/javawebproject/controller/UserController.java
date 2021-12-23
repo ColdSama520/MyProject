@@ -14,11 +14,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/login")
-    public int Login(@RequestBody User user){
+    @GetMapping("/login")
+    public String Login(User user){
         System.out.println(user.getUser_id());
         System.out.println(user.getUser_pwd());
-        return 200;
+        return user.toString();
     }
 
     @GetMapping("/{user_id}")
