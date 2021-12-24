@@ -7,11 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TeacherMapper {
-
-    List<Teacher> selectTeacherAll();
-
-    void addTeacher(Teacher teacher);
+public interface CourseMapper {
 
     List<Course> selectTeacherAllCourse(String teacher_id);
 }

@@ -1,6 +1,7 @@
 package cn.edu.bjfu.javawebproject.controller;
 
 
+import cn.edu.bjfu.javawebproject.pojo.Course;
 import cn.edu.bjfu.javawebproject.pojo.Teacher;
 import cn.edu.bjfu.javawebproject.service.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,10 @@ public class TeacherController {
     @GetMapping("/add")
     public void addTeacher(Teacher teacher){
         teacherService.addTeacher(teacher);
+    }
+
+    @GetMapping("/allCourse")
+    public List<Course> selectTeacherAllCourse(String teacher_id) {
+        return teacherService.selectTeacherAllCourse(teacher_id);
     }
 }

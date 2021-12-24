@@ -1,5 +1,6 @@
 package cn.edu.bjfu.javawebproject.service;
 
+import cn.edu.bjfu.javawebproject.mapper.CourseMapper;
 import cn.edu.bjfu.javawebproject.mapper.TeacherMapper;
 import cn.edu.bjfu.javawebproject.pojo.Course;
 import cn.edu.bjfu.javawebproject.pojo.Teacher;
@@ -9,20 +10,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TeacherService {
+public class CourseService {
 
     @Autowired
-    TeacherMapper teacherMapper;
-
-    public List<Teacher> selectTeacherAll() {
-        return teacherMapper.selectTeacherAll();
-    }
-
-    public void addTeacher(Teacher teacher) {
-        teacherMapper.addTeacher(teacher);
-    }
+    CourseMapper courseMapper;
 
     public List<Course> selectTeacherAllCourse(String teacher_id) {
-        return teacherMapper.selectTeacherAllCourse(teacher_id);
+        return courseMapper.selectTeacherAllCourse(teacher_id);
     }
 }

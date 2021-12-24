@@ -4,10 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.bjfu.javawebproject.mapper.TeacherMapper">
 
-<!--    <select id="selectUserById" parameterType="String"-->
-<!--            resultType="cn.edu.bjfu.javawebproject.pojo.Teacher">-->
-<!--        select * from Teahcer where user_id = #{user_id}-->
-<!--    </select>-->
     <select id="selectTeacherAll" resultType="cn.edu.bjfu.javawebproject.pojo.Teacher">
         select * from Teacher
     </select>
