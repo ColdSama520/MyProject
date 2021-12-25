@@ -13,4 +13,7 @@ public class Course {
     private String course_start_year;
     private String course_is_archive;
     private String teacher_id;
+
+    private String student_class;
+    private String student_number;
 }

@@ -6,7 +6,10 @@
 
     <select id="selectTeacherAllCourse" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Course">
-        select * from Course where teacher_id = #{teacher_id}
+        select Course.course_id, course_name, course_start_year, course_is_archive, student_class, COUNT(Student.student_class) AS student_number
+        from Course, Student, SC
+        where SC.course_id = Course.course_id AND SC.student_id = Student.student_id AND teacher_id = #{teacher_id}
+        GROUP BY Student.student_class
     </select>
 
 </mapper>
