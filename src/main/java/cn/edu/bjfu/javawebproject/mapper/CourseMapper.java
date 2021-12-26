@@ -10,4 +10,8 @@ import java.util.List;
 public interface CourseMapper {
 
     List<Course> selectTeacherAllCourse(String teacher_id);
+
+    List<Course> selectAllCourse();
+
+    List<Course> selectCourseMessage(String course_id);
 }

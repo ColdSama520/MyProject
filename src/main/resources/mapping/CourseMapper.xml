@@ -9,7 +9,19 @@
         select Course.course_id, course_name, course_start_year, course_is_archive, student_class, COUNT(Student.student_class) AS student_number
         from Course, Student, SC
         where SC.course_id = Course.course_id AND SC.student_id = Student.student_id AND teacher_id = #{teacher_id}
-        GROUP BY Student.student_class
+        GROUP BY SC.sc_id
+    </select>
+
+    <select id="selectAllCourse" resultType="cn.edu.bjfu.javawebproject.pojo.Course">
+        select * from Course
+    </select>
+
+    <select id="selectCourseMessage" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Course">
+        select Course.course_id, course_name, course_start_year, course_is_archive, student_class, COUNT(Student.student_class) AS student_number, teacher_name
+        from Course, Student, SC, Teacher
+        where SC.course_id = Course.course_id AND SC.student_id = Student.student_id AND Course.course_id = #{course_id} AND Teacher.teacher_id = Course.teacher_id
+        GROUP BY SC.sc_id
     </select>
 
 </mapper>

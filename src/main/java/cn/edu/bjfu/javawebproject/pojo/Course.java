@@ -16,4 +16,5 @@ public class Course {
 
     private String student_class;
     private String student_number;
+    private String teacher_name;
 }

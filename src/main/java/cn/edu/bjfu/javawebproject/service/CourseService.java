@@ -18,4 +18,12 @@ public class CourseService {
     public List<Course> selectTeacherAllCourse(String teacher_id) {
         return courseMapper.selectTeacherAllCourse(teacher_id);
     }
+
+    public List<Course> selectAllCourse() {
+        return courseMapper.selectAllCourse();
+    }
+
+    public List<Course> selectCourseMessage(String course_id) {
+        return courseMapper.selectCourseMessage(course_id);
+    }
 }

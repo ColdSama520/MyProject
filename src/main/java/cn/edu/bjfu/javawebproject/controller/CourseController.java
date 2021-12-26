@@ -25,4 +25,14 @@ public class CourseController {
     public List<Course> selectTeacherAllCourse(String teacher_id) {
         return courseService.selectTeacherAllCourse(teacher_id);
     }
+
+    @GetMapping("/all")
+    public List<Course> selectAllCourse() {
+        return courseService.selectAllCourse();
+    }
+
+    @GetMapping("/CourseMessage")
+    public List<Course> selectCourseMessage(String course_id) {
+        return courseService.selectCourseMessage(course_id);
+    }
 }
