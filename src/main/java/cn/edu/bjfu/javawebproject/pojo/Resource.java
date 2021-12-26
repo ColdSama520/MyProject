@@ -13,4 +13,5 @@ public class Resource {
     private String resource_type;
     private String case_id;
     private String resource_local;
+    private String resource_date;
 }
