@@ -17,7 +17,13 @@ public interface CourseMapper {
 
     List<Course> selectCourseCommonMessage(String course_id, String teacher_id);
 
+    List<Course> selectCourseUnCommonMessage(String course_id, String teacher_id);
+
     List<Course> selectCourseCommon(String teacher_id);
 
+    List<Course> selectCourseUnCommon(String teacher_id);
+
     void updateCourseUnCommon(String course_id);
+
+    void updateCourseCommon(String course_id);
 }

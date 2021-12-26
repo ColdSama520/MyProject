@@ -41,9 +41,19 @@ public class CourseController {
         return courseService.selectCourseCommonMessage(course_id, teacher_id);
     }
 
+    @GetMapping("/CourseUnCommonMessage")
+    public List<Course> selectCourseUnCommonMessage(String course_id, String teacher_id) {
+        return courseService.selectCourseUnCommonMessage(course_id, teacher_id);
+    }
+
     @GetMapping("/CourseCommon")
     public List<Course> selectCourseCommon(String teacher_id) {
         return courseService.selectCourseCommon(teacher_id);
+    }
+
+    @GetMapping("/CourseUnCommon")
+    public List<Course> selectCourseUnCommon(String teacher_id) {
+        return courseService.selectCourseUnCommon(teacher_id);
     }
 
     @GetMapping("/updateUnCommon")
@@ -53,4 +63,13 @@ public class CourseController {
         courseService.updateCourseUnCommon(course_id);
         return 200;
     }
+
+    @GetMapping("/updateCommon")
+    public int updateCourseCommon(String course_id) {
+        if(course_id.equals(""))
+            return 400;
+        courseService.updateCourseCommon(course_id);
+        return 200;
+    }
+
 }
