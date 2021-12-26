@@ -14,6 +14,10 @@ public class TeacherService {
     @Autowired
     TeacherMapper teacherMapper;
 
+    public List<Teacher> selectTeacher(String teacher_id) {
+        return teacherMapper.selectTeacher(teacher_id);
+    }
+
     public List<Teacher> selectTeacherAll() {
         return teacherMapper.selectTeacherAll();
     }

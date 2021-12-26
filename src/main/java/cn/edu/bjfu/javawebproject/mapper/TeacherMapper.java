@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 public interface TeacherMapper {
 
+    List<Teacher> selectTeacher(String teacher_id);
+
     List<Teacher> selectTeacherAll();
 
     void addTeacher(Teacher teacher);

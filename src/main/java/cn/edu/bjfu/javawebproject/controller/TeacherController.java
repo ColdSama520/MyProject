@@ -17,6 +17,11 @@ public class TeacherController {
     @Autowired
     TeacherService teacherService;
 
+    @GetMapping("search")
+    public List<Teacher> selectTeacher(String teacher_id) {
+        return teacherService.selectTeacher(teacher_id);
+    }
+
     @GetMapping("/all")
     public List<Teacher> GetTeacherAll(){
         return teacherService.selectTeacherAll();

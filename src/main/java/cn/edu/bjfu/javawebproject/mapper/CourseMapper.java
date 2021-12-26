@@ -14,4 +14,10 @@ public interface CourseMapper {
     List<Course> selectAllCourse();
 
     List<Course> selectCourseMessage(String course_id);
+
+    List<Course> selectCourseCommonMessage(String course_id, String teacher_id);
+
+    List<Course> selectCourseCommon(String teacher_id);
+
+    void updateCourseUnCommon(String course_id);
 }

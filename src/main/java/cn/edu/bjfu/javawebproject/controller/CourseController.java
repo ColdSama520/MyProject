@@ -35,4 +35,22 @@ public class CourseController {
     public List<Course> selectCourseMessage(String course_id) {
         return courseService.selectCourseMessage(course_id);
     }
+
+    @GetMapping("/CourseCommonMessage")
+    public List<Course> selectCourseCommonMessage(String course_id, String teacher_id) {
+        return courseService.selectCourseCommonMessage(course_id, teacher_id);
+    }
+
+    @GetMapping("/CourseCommon")
+    public List<Course> selectCourseCommon(String teacher_id) {
+        return courseService.selectCourseCommon(teacher_id);
+    }
+
+    @GetMapping("/updateUnCommon")
+    public int updateCourseUnCommon(String course_id) {
+        if(course_id.equals(""))
+            return 400;
+        courseService.updateCourseUnCommon(course_id);
+        return 200;
+    }
 }

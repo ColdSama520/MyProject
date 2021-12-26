@@ -23,7 +23,19 @@ public class CourseService {
         return courseMapper.selectAllCourse();
     }
 
+    public List<Course> selectCourseCommonMessage(String course_id, String teacher_id) {
+        return courseMapper.selectCourseCommonMessage(course_id, teacher_id);
+    }
+
     public List<Course> selectCourseMessage(String course_id) {
         return courseMapper.selectCourseMessage(course_id);
+    }
+
+    public List<Course> selectCourseCommon(String teacher_id) {
+        return courseMapper.selectCourseCommon(teacher_id);
+    }
+
+    public void updateCourseUnCommon(String course_id) {
+        courseMapper.updateCourseUnCommon(course_id);
     }
 }
