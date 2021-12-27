@@ -11,6 +11,8 @@ public interface StudentMapper {
 
     List<Student> selectCourseStudent(String course_id);
 
+    List<Student> selectCourseStudentById(String course_id, String student_id);
+
     void addStudent(Student student);
 
     void updateStudent(Student student);

@@ -24,6 +24,11 @@ public class StudentController {
         return studentService.selectCourseStudent(course_id);
     }
 
+    @GetMapping("/CourseStudentById")
+    public List<Student> selectCourseStudentById(String course_id, String student_id) {
+        return studentService.selectCourseStudentById(course_id, student_id);
+    }
+
     @GetMapping("/add")
     public void addStudent(Student student) {
         studentService.addStudent(student);

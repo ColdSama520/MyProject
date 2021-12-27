@@ -11,6 +11,13 @@
         where Student.student_id = SC.student_id AND SC.course_id = Course.course_id AND SC.course_id = #{course_id}
     </select>
 
+    <select id="selectCourseStudentById" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Student">
+        select Student.student_id, student_name, student_class
+        from Student, SC, Course
+        where Student.student_id = SC.student_id AND SC.course_id = Course.course_id AND SC.course_id = #{course_id} AND Student.student_id = #{student_id}
+    </select>
+
     <insert id="addStudent" parameterType="cn.edu.bjfu.javawebproject.pojo.Student">
         insert into Student (student_id, student_name, student_class) values(#{student_id}, #{student_name}, #{student_class})
     </insert>

@@ -18,6 +18,10 @@ public class StudentService {
         return studentMapper.selectCourseStudent(course_id);
     }
 
+    public List<Student> selectCourseStudentById(String course_id, String student_id) {
+        return studentMapper.selectCourseStudentById(course_id, student_id);
+    }
+
     public void addStudent(Student student) {
         studentMapper.addStudent(student);
     }
