@@ -32,4 +32,8 @@ public class UserService {
         userMapper.addTeacherUser(user_id, user_pwd, user_role);
     }
 
+    public void addStudentUser(String  user_id, String user_pwd, String user_role) {
+        userMapper.addStudentUser(user_id, user_pwd, user_role);
+    }
+
 }

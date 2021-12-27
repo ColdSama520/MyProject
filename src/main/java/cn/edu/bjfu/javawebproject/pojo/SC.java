@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class SC {
     private String sc_id;
     private String student_id;
-    private String group_id;
+    private String course_id;
     private String sc_is_delete;
 }

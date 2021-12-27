@@ -25,4 +25,9 @@
     <insert id="addTeacherUser" parameterType="String">
         insert into User (user_id,user_pwd,user_role) values(#{user_id},#{user_pwd},#{user_role})
     </insert>
+
+    <insert id="addStudentUser" parameterType="String">
+        insert into User (user_id,user_pwd,user_role) values(#{user_id},#{user_pwd},#{user_role})
+    </insert>
+
 </mapper>

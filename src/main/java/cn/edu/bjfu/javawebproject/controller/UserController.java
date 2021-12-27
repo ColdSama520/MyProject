@@ -40,4 +40,9 @@ public class UserController {
         userService.addTeacherUser(user_id, "123456", "教师");
     }
 
+    @GetMapping("/addStudent")
+    public void AddStudentUser(String user_id) {
+        userService.addStudentUser(user_id, "123456", "学生");
+    }
+
 }

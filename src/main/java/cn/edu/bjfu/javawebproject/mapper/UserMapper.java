@@ -18,4 +18,6 @@ public interface UserMapper {
 
     void addTeacherUser(String user_id, String user_pwd, String user_role);
 
+    void addStudentUser(String user_id, String user_pwd, String user_role);
+
 }
