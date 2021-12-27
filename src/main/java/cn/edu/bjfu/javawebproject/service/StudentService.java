@@ -22,4 +22,8 @@ public class StudentService {
         studentMapper.addStudent(student);
     }
 
+    public void updateStudent(Student student) {
+        studentMapper.updateStudent(student);
+    }
+
 }

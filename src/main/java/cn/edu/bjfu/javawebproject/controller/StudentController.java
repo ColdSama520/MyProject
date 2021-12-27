@@ -29,4 +29,9 @@ public class StudentController {
         studentService.addStudent(student);
     }
 
+    @GetMapping("updateStudent")
+    public void updateStudent(Student student) {
+        studentService.updateStudent(student);
+    }
+
 }

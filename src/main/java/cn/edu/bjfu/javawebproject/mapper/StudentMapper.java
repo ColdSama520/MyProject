@@ -13,4 +13,6 @@ public interface StudentMapper {
 
     void addStudent(Student student);
 
+    void updateStudent(Student student);
+
 }

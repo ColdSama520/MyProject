@@ -30,6 +30,11 @@ public class UserController {
         return userService.selectUserById(user_id);
     }
 
+    @GetMapping("/searchUser")
+    public User SearchUser(String user_id){
+        return userService.selectUserById(user_id);
+    }
+
     @GetMapping("/all")
     public List<User> GetUserAll(){
         return userService.selectUserAll();
