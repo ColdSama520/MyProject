@@ -23,6 +23,10 @@ public class CourseService {
         return courseMapper.selectAllCourse();
     }
 
+    public List<Course> selectHasCourse(String course_id) {
+        return courseMapper.selectHasCourse(course_id);
+    }
+
     public List<Course> selectCourseCommonMessage(String course_id, String teacher_id) {
         return courseMapper.selectCourseCommonMessage(course_id, teacher_id);
     }
@@ -49,5 +53,9 @@ public class CourseService {
 
     public void updateCourseCommon(String course_id) {
         courseMapper.updateCourseCommon(course_id);
+    }
+
+    public void addCourseCommon(String course_id, String course_name, String course_start_year, String course_is_archive, String teacher_id) {
+        courseMapper.addCourseCommon(course_id, course_name, course_start_year, course_is_archive, teacher_id);
     }
 }

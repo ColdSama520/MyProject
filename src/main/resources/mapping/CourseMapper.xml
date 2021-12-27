@@ -56,6 +56,17 @@
         GROUP BY SC.sc_id
     </select>
 
+    <select id="selectHasCourse" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Course">
+        select *
+        from Course
+        where course_id = #{course_id}
+    </select>
+
+    <insert id="addCourseCommon" parameterType="String">
+        insert into Course (course_id,course_name,course_start_year,course_is_archive,teacher_id) values(#{course_id},#{course_name},#{course_start_year},#{course_is_archive},#{teacher_id})
+    </insert>
+
     <update id="updateCourseUnCommon" parameterType="String">
         update Course
         set course_is_archive = '是'

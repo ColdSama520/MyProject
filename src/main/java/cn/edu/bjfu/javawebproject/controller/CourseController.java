@@ -26,6 +26,11 @@ public class CourseController {
         return courseService.selectTeacherAllCourse(teacher_id);
     }
 
+    @GetMapping("/IsHasCourse")
+    public List<Course> selectHasCourse(String course_id) {
+        return courseService.selectHasCourse(course_id);
+    }
+
     @GetMapping("/all")
     public List<Course> selectAllCourse() {
         return courseService.selectAllCourse();
@@ -70,6 +75,11 @@ public class CourseController {
             return 400;
         courseService.updateCourseCommon(course_id);
         return 200;
+    }
+
+    @GetMapping("/addCourseCommon")
+    public void addCourseCommon(String course_id, String course_name, String course_start_year, String course_is_archive, String teacher_id) {
+        courseService.addCourseCommon(course_id, course_name, course_start_year, course_is_archive, teacher_id);
     }
 
 }
