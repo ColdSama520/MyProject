@@ -10,4 +10,6 @@ public interface SCMapper {
 
     void addSC(SC sc);
 
+    void deleteSCStudent(String course_id, String student_id);
+
 }

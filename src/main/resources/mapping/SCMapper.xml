@@ -8,4 +8,10 @@
         insert into SC (sc_id, student_id, course_id, sc_is_delete) values(#{sc_id}, #{student_id}, #{course_id}, #{sc_is_delete})
     </insert>
 
+    <update id="deleteSCStudent" parameterType="String">
+        update Student, SC, Course
+        set SC.sc_is_delete = '是'
+        where Student.student_id = SC.student_id AND SC.course_id = Course.course_id AND SC.course_id = #{course_id} AND SC.student_id = #{student_id}
+    </update>
+
 </mapper>

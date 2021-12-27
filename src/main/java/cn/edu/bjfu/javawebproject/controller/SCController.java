@@ -22,4 +22,9 @@ public class SCController {
         scService.addSC(sc);
     }
 
+    @GetMapping("/deleteStudent")
+    public void deleteSCStudent(String course_id, String student_id) {
+        scService.deleteSCStudent(course_id, student_id);
+    }
+
 }

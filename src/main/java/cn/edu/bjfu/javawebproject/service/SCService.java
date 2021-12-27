@@ -17,5 +17,8 @@ public class SCService {
         scMapper.addSC(sc);
     }
 
+    public void deleteSCStudent(String course_id, String student_id) {
+        scMapper.deleteSCStudent(course_id, student_id);
+    }
 
 }
