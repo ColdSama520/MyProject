@@ -39,4 +39,9 @@ public class StudentController {
         studentService.updateStudent(student);
     }
 
+    @GetMapping("updateStudentName")
+    public void updateStudentName(Student student){
+        studentService.updateStudentName(student);
+    }
+
 }

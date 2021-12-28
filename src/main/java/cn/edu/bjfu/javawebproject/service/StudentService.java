@@ -30,4 +30,8 @@ public class StudentService {
         studentMapper.updateStudent(student);
     }
 
+    public void updateStudentName(Student student){
+        studentMapper.updateStudentName(student);
+    }
+
 }

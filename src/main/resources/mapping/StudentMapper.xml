@@ -28,4 +28,10 @@
         where student_id = #{student_id}
     </update>
 
+    <update id="updateStudentName" parameterType="cn.edu.bjfu.javawebproject.pojo.Student">
+        update Student
+        set student_name = #{student_name}, student_phone = #{student_phone}
+        where student_id = #{student_id}
+    </update>
+
 </mapper>
