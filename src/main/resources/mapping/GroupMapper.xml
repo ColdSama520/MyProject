@@ -24,6 +24,10 @@
         insert into `Group` (group_id, group_name, project_id) values(#{group_id}, #{group_name}, #{project_id})
     </insert>
 
+    <insert id="addGroupAll" parameterType="cn.edu.bjfu.javawebproject.pojo.Group">
+        insert into `Group` (group_id, group_name, student_id, project_id) values(#{group_id}, #{group_name}, #{student_id}, #{project_id})
+    </insert>
+
     <update id="updateGroup" parameterType="String">
         update `Group`
         set student_id = #{student_id}

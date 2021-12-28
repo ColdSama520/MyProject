@@ -39,6 +39,11 @@ public class GroupController {
         groupService.addGroup(group);
     }
 
+    @GetMapping("/addGroupAll")
+    public void addGroupAll(Group group) {
+        groupService.addGroupAll(group);
+    }
+
     @GetMapping("/deleteGroup")
     public void deleteGroup(String project_id) {
         groupService.deleteGroup(project_id);

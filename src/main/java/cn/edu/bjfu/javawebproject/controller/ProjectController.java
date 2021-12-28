@@ -30,6 +30,11 @@ public class ProjectController {
         return projectService.selectCourseProjectById(course_id, project_id);
     }
 
+    @GetMapping("/CourseProjectIdAll")
+    public List<Project> selectCourseProjectIdAll(String course_id) {
+        return projectService.selectCourseProjectIdAll(course_id);
+    }
+
     @GetMapping("/addProject")
     public void addProject(Project project) {
         projectService.addProject(project);

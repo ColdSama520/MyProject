@@ -13,6 +13,8 @@ public interface ProjectMapper {
 
     List<Project> selectCourseProjectById(String course_id, String project_id);
 
+    List<Project> selectCourseProjectIdAll(String course_id);
+
     void deleteProject(String project_id);
 
     void updateProject(Project project);

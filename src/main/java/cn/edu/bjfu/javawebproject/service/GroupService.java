@@ -31,6 +31,10 @@ public class GroupService {
         groupMapper.addGroup(group);
     }
 
+    public void addGroupAll(Group group) {
+        groupMapper.addGroupAll(group);
+    }
+
     public void deleteGroup(String project_id) {
         groupMapper.deleteGroup(project_id);
     }

@@ -16,4 +16,5 @@ public class Project {
     private String course_id;
 
     private String group_number;
+    private String label;
 }

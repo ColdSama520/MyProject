@@ -20,6 +20,13 @@
         GROUP BY Project.project_id
     </select>
 
+    <select id="selectCourseProjectIdAll" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Project">
+        select Project.project_id as label
+        from Project, Course
+        where Project.course_id = Course.course_id AND Project.course_id = #{course_id}
+    </select>
+
     <insert id="addProject" parameterType="cn.edu.bjfu.javawebproject.pojo.Project">
         insert into Project (project_id, project_name, project_introduction, project_number_limit, project_instructions, course_id) values(#{project_id}, #{project_name}, #{project_introduction}, #{project_number_limit}, #{project_instructions}, #{course_id})
     </insert>

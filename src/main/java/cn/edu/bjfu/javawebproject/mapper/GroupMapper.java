@@ -18,6 +18,8 @@ public interface GroupMapper {
 
     void addGroup(Group group);
 
+    void addGroupAll(Group group);
+
     void deleteGroup(String project_id);
 
     void deleteGroupByGroupId(String group_id);

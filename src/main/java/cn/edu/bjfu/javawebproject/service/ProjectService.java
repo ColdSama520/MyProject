@@ -22,6 +22,10 @@ public class ProjectService {
         return projectMapper.selectCourseProjectById(course_id, project_id);
     }
 
+    public List<Project> selectCourseProjectIdAll(String course_id) {
+        return projectMapper.selectCourseProjectIdAll(course_id);
+    }
+
     public void addProject(Project project) {
         projectMapper.addProject(project);
     }
