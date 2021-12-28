@@ -1,6 +1,7 @@
 package cn.edu.bjfu.javawebproject.controller;
 
 
+import cn.edu.bjfu.javawebproject.pojo.Group;
 import cn.edu.bjfu.javawebproject.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +16,11 @@ public class GroupController {
 
     @Autowired
     GroupService groupService;
+
+    @GetMapping("/addGroup")
+    public void addGroup(Group group) {
+        groupService.addGroup(group);
+    }
 
     @GetMapping("/deleteGroup")
     public void deleteGroup(String project_id) {

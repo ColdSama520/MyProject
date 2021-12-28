@@ -11,8 +11,12 @@ public interface ProjectMapper {
 
     List<Project> selectProject(String course_id);
 
+    List<Project> selectCourseProjectById(String course_id, String project_id);
+
     void deleteProject(String project_id);
 
     void updateProject(Project project);
+
+    void addProject(Project project);
 
 }

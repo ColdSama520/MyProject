@@ -25,6 +25,16 @@ public class ProjectController {
         return projectService.selectProject(course_id);
     }
 
+    @GetMapping("/ProjectCourseById")
+    public List<Project> selectCourseProjectById(String course_id, String project_id) {
+        return projectService.selectCourseProjectById(course_id, project_id);
+    }
+
+    @GetMapping("/addProject")
+    public void addProject(Project project) {
+        projectService.addProject(project);
+    }
+
     @GetMapping("/deleteProject")
     public void deleteProject(String project_id) {
         projectService.deleteProject(project_id);

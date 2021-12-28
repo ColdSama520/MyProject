@@ -18,6 +18,14 @@ public class ProjectService {
        return projectMapper.selectProject(course_id);
     }
 
+    public List<Project> selectCourseProjectById(String course_id, String project_id) {
+        return projectMapper.selectCourseProjectById(course_id, project_id);
+    }
+
+    public void addProject(Project project) {
+        projectMapper.addProject(project);
+    }
+
     public void deleteProject(String project_id) {
         projectMapper.deleteProject(project_id);
     }

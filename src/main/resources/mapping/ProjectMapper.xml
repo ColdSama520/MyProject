@@ -12,6 +12,18 @@
         GROUP BY Project.project_id
     </select>
 
+    <select id="selectCourseProjectById" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Project">
+        select Project.project_id, project_name, project_introduction, project_number_limit, project_instructions, Course.course_id, COUNT(group_id) - 1 as group_number
+        from Project, Course, `Group`
+        where Project.course_id = Course.course_id AND Project.project_id = `Group`.project_id AND Project.course_id = #{course_id} AND Project.project_id = #{project_id}
+        GROUP BY Project.project_id
+    </select>
+
+    <insert id="addProject" parameterType="cn.edu.bjfu.javawebproject.pojo.Project">
+        insert into Project (project_id, project_name, project_introduction, project_number_limit, project_instructions, course_id) values(#{project_id}, #{project_name}, #{project_introduction}, #{project_number_limit}, #{project_instructions}, #{course_id})
+    </insert>
+
     <update id="updateProject" parameterType="cn.edu.bjfu.javawebproject.pojo.Project">
         update Project
         set project_introduction = #{project_introduction}, project_number_limit = #{project_number_limit}, project_instructions = #{project_instructions}
