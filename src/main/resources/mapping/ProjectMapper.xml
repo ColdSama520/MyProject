@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.bjfu.javawebproject.mapper.ProjectMapper">
+
+    <select id="selectProject" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Project">
+        select Project.project_id, project_name, project_introduction, project_number_limit, project_instructions, Course.course_id, COUNT(group_id) - 1 as group_number
+        from Project, Course, `Group`
+        where Project.course_id = Course.course_id AND Project.project_id = `Group`.project_id AND Project.course_id = #{course_id}
+        GROUP BY Project.project_id
+    </select>
+
+    <update id="updateProject" parameterType="cn.edu.bjfu.javawebproject.pojo.Project">
+        update Project
+        set project_introduction = #{project_introduction}, project_number_limit = #{project_number_limit}, project_instructions = #{project_instructions}
+        where project_id = #{project_id}
+    </update>
+
+    <delete id="deleteProject" parameterType="String">
+        delete from Project
+        where project_id = #{project_id}
+    </delete>
+
+</mapper>

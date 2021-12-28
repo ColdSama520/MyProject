@@ -14,4 +14,6 @@ public class Project {
     private String project_number_limit;
     private String project_instructions;
     private String course_id;
+
+    private String group_number;
 }
