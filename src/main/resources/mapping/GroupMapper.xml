@@ -4,14 +4,40 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.bjfu.javawebproject.mapper.GroupMapper">
 
+    <select id="selectCourseGroup" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Group">
+        select Project.project_name, `Group`.student_id, SG.student_id as student_member, `Group`.group_id
+        from Project, `Group`, Course, SG
+        where Project.course_id = Course.course_id AND Project.project_id = `Group`.project_id AND SG.group_id = `Group`.group_id
+        AND Course.course_id = #{course_id} AND `Group`.group_name != 'cs'
+    </select>
+
+    <select id="GroupCourseProjectById" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Group">
+        select Project.project_name, `Group`.student_id, SG.student_id as student_member
+        from Project, `Group`, Course, SG
+        where Project.course_id = Course.course_id AND Project.project_id = `Group`.project_id AND SG.group_id = `Group`.group_id
+        AND Course.course_id = #{course_id} AND `Group`.student_id = #{student_id} AND `Group`.group_name != 'cs'
+    </select>
 
     <insert id="addGroup" parameterType="cn.edu.bjfu.javawebproject.pojo.Group">
         insert into `Group` (group_id, group_name, project_id) values(#{group_id}, #{group_name}, #{project_id})
     </insert>
 
+    <update id="updateGroup" parameterType="String">
+        update `Group`
+        set student_id = #{student_id}
+        where group_id = #{group_id}
+    </update>
+
     <delete id="deleteGroup" parameterType="String">
         delete from `Group`
         where project_id = #{project_id}
+    </delete>
+
+    <delete id="deleteGroupByGroupId" parameterType="String">
+        delete from `Group`
+        where group_id = #{group_id}
     </delete>
 
 </mapper>

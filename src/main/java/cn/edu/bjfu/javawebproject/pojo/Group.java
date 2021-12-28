@@ -12,4 +12,7 @@ public class Group {
     private String group_name;
     private String student_id;
     private String project_id;
+
+    private String project_name;
+    private String student_member;
 }
