@@ -40,4 +40,9 @@ public class CaseController {
         caseService.addCaseAll(cAse);
     }
 
+    @GetMapping("/updateCaseById")
+    public void updateCaseById(String case_id, String case_content) {
+        caseService.updateCaseById(case_id, case_content);
+    }
+
 }

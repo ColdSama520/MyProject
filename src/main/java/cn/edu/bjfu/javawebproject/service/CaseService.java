@@ -30,4 +30,8 @@ public class CaseService {
         caseMapper.addCaseAll(cAse);
     }
 
+    public void updateCaseById(String case_id, String case_content) {
+        caseMapper.updateCaseById(case_id, case_content);
+    }
+
 }

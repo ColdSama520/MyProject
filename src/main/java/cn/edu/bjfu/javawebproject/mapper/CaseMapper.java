@@ -17,4 +17,6 @@ public interface CaseMapper {
 
     void addCaseAll(Case cAse);
 
+    void updateCaseById(String case_id, String case_content);
+
 }

@@ -29,4 +29,10 @@
         where case_id = #{case_id}
     </update>
 
+    <update id="updateCaseById" parameterType="String">
+        update `Case`
+        set case_content = #{case_content}
+        where case_id = #{case_id}
+    </update>
+
 </mapper>
