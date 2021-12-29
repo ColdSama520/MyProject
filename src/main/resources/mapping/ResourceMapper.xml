@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.bjfu.javawebproject.mapper.ResourceMapper">
+
+
+    <select id="selectResourceCase" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Resource">
+        select *
+        from Resource
+        where case_id = #{case_id}
+    </select>
+
+    <select id="selectResourceCaseByName" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Resource">
+        select *
+        from Resource
+        where case_id = #{case_id} AND resource_name = #{resource_name}
+    </select>
+
+    <delete id="deleteResourceById" parameterType="String">
+        delete from Resource
+        where resource_id = #{resource_id}
+    </delete>
+
+
+</mapper>

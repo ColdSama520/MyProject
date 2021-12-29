@@ -30,4 +30,14 @@ public class CaseController {
         return caseService.selectCaseCourseByName(course_id, case_name);
     }
 
+    @GetMapping("/deleteCaseById")
+    public void deleteCaseById(String case_id) {
+        caseService.deleteCaseById(case_id);
+    }
+
+    @GetMapping("/addCaseAll")
+    public void addCaseAll(Case cAse) {
+        caseService.addCaseAll(cAse);
+    }
+
 }

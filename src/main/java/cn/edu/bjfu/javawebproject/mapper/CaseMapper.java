@@ -13,4 +13,8 @@ public interface CaseMapper {
 
     List<Case> selectCaseCourseByName(String course_id, String case_name);
 
+    void deleteCaseById(String case_id);
+
+    void addCaseAll(Case cAse);
+
 }

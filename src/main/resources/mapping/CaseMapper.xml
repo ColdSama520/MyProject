@@ -8,16 +8,25 @@
     <select id="selectCaseCourse" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Case">
         select *
-        from `case`
-        where course_id = #{course_id}
+        from `Case`
+        where course_id = #{course_id} AND case_is_delete = '否'
     </select>
 
     <select id="selectCaseCourseByName" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Case">
         select *
-        from `case`
-        where course_id = #{course_id} AND case_name = #{case_name}
+        from `Case`
+        where course_id = #{course_id} AND case_name = #{case_name} AND case_is_delete = '否'
     </select>
 
+    <insert id="addCaseAll" parameterType="cn.edu.bjfu.javawebproject.pojo.Case">
+        insert into `Case` (case_id, case_name, course_id, case_content, case_type, case_is_delete) values(#{case_id}, #{case_name}, #{course_id}, #{case_content}, #{case_type}, #{case_is_delete})
+    </insert>
+
+    <update id="deleteCaseById" parameterType="String">
+        update `Case`
+        set case_is_delete = '是'
+        where case_id = #{case_id}
+    </update>
 
 </mapper>

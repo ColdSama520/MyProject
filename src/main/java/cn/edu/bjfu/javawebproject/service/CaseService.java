@@ -22,4 +22,12 @@ public class CaseService {
         return caseMapper.selectCaseCourseByName(course_id, case_name);
     }
 
+    public void deleteCaseById(String case_id) {
+        caseMapper.deleteCaseById(case_id);
+    }
+
+    public void addCaseAll(Case cAse) {
+        caseMapper.addCaseAll(cAse);
+    }
+
 }
