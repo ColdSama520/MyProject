@@ -32,6 +32,14 @@
         GROUP BY SC.sc_id
     </select>
 
+    <select id="selectCourseStudentCommon" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Course">
+        select Course.course_name
+        from Student, Course, SC
+        where Student.student_id = SC.student_id AND SC.course_id = Course.course_id AND SC.sc_is_delete = '否' AND Course.course_is_archive = '否'
+        AND SC.student_id = #{student_id}
+    </select>
+
     <select id="selectCourseUnCommonMessage" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Course">
         select Course.course_id, course_name, course_start_year, course_is_archive, student_class, COUNT(Student.student_class) AS student_number, Course.teacher_id
