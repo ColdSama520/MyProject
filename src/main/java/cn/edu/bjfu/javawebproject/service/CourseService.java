@@ -51,6 +51,10 @@ public class CourseService {
         return courseMapper.selectCourseStudentCommon(student_id);
     }
 
+    public List<Course> selectCourseTeacherCommon(String teacher_id) {
+        return courseMapper.selectCourseTeacherCommon(teacher_id);
+    }
+
     public void updateCourseUnCommon(String course_id) {
         courseMapper.updateCourseUnCommon(course_id);
     }

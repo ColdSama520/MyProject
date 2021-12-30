@@ -66,6 +66,11 @@ public class CourseController {
         return courseService.selectCourseStudentCommon(student_id);
     }
 
+    @GetMapping("/CourseTeacherCommon")
+    List<Course> selectCourseTeacherCommon(String teacher_id) {
+        return courseService.selectCourseTeacherCommon(teacher_id);
+    }
+
     @GetMapping("/updateUnCommon")
     public int updateCourseUnCommon(String course_id) {
         if(course_id.equals(""))
