@@ -13,6 +13,8 @@ public interface StudentMapper {
 
     List<Student> selectCourseStudentById(String course_id, String student_id);
 
+    List<Student> selectStudentMessageById(String student_id);
+
     void addStudent(Student student);
 
     void updateStudent(Student student);

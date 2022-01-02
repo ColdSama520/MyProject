@@ -22,6 +22,10 @@ public class StudentService {
         return studentMapper.selectCourseStudentById(course_id, student_id);
     }
 
+    public List<Student> selectStudentMessageById(String student_id) {
+        return studentMapper.selectStudentMessageById(student_id);
+    }
+
     public void addStudent(Student student) {
         studentMapper.addStudent(student);
     }
