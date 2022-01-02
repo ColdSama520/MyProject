@@ -14,6 +14,10 @@ public interface GroupMapper {
 
     List<Group> GroupCourseProjectById(String course_id, String student_id);
 
+    List<Group> selectCourseGroupAll();
+
+    List<Group> selectCourseGroupSearch(String group_id);
+
     void updateGroup(String group_id, String student_id);
 
     void addGroup(Group group);

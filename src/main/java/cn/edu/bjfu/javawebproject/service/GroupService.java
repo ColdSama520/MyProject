@@ -23,6 +23,14 @@ public class GroupService {
         return groupMapper.GroupCourseProjectById(course_id, student_id);
     }
 
+    public List<Group> selectCourseGroupAll() {
+        return groupMapper.selectCourseGroupAll();
+    }
+
+    public List<Group> selectCourseGroupSearch(String group_id) {
+        return groupMapper.selectCourseGroupSearch(group_id);
+    }
+
     public void updateGroup(String group_id, String student_id) {
         groupMapper.updateGroup(group_id, student_id);
     }

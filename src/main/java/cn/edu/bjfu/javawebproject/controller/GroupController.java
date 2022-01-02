@@ -29,6 +29,16 @@ public class GroupController {
         return groupService.GroupCourseProjectById(course_id, student_id);
     }
 
+    @GetMapping("/")
+    public List<Group> selectCourseGroupAll() {
+        return groupService.selectCourseGroupAll();
+    }
+
+    @GetMapping("/")
+    public List<Group> selectCourseGroupSearch(String group_id) {
+        return groupService.selectCourseGroupSearch(group_id);
+    }
+
     @GetMapping("/updateGroup")
     public void updateGroup(String group_id, String student_id) {
         groupService.updateGroup(group_id, student_id);

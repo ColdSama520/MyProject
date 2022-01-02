@@ -12,6 +12,19 @@
         AND Course.course_id = #{course_id} AND `Group`.group_name != 'cs'
     </select>
 
+    <select id="selectCourseGroupAll" resultType="cn.edu.bjfu.javawebproject.pojo.Group">
+        select *
+        from `Group`
+        where group_name != 'cs'
+    </select>
+
+    <select id="selectCourseGroupSearch" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Group">
+        select *
+        from `Group`
+        where group_name != 'cs' AND group_id = #{group_id}
+    </select>
+
     <select id="GroupCourseProjectById" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Group">
         select Project.project_name, `Group`.student_id, SG.student_id as student_member
