@@ -29,12 +29,12 @@ public class GroupController {
         return groupService.GroupCourseProjectById(course_id, student_id);
     }
 
-    @GetMapping("/")
+    @GetMapping("/CourseGroupAllNo")
     public List<Group> selectCourseGroupAll() {
         return groupService.selectCourseGroupAll();
     }
 
-    @GetMapping("/")
+    @GetMapping("/CourseGroupSearch")
     public List<Group> selectCourseGroupSearch(String group_id) {
         return groupService.selectCourseGroupSearch(group_id);
     }
