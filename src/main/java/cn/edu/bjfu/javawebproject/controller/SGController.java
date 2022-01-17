@@ -1,6 +1,7 @@
 package cn.edu.bjfu.javawebproject.controller;
 
 
+import cn.edu.bjfu.javawebproject.pojo.SG;
 import cn.edu.bjfu.javawebproject.service.SGService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,5 +22,18 @@ public class SGController {
         sgService.deleteSGByGroupId(group_id);
     }
 
+
+    @GetMapping("/HasGroupByStudentId")
+    public String HasGroupByStudentId(String student_id) {
+        return sgService.HasGroupByStudentId(student_id);
+    }
+
+    @GetMapping("/HasGroupNumber")
+    public int HasGroupNumber(String group_id) {
+        SG sg = sgService.HasGroupNumber(group_id);
+        if (sg.getGroup_number().equals(sg.getProject_number_limit()))
+            return  0;
+        return 1;
+    }
 
 }

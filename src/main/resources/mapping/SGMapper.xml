@@ -9,4 +9,23 @@
         where group_id = #{group_id}
     </delete>
 
+    <select id="HasGroupByStudentId" parameterType="String"
+            resultType="String">
+        select SG.group_id
+        from SG
+        where student_id = #{student_id}
+    </select>
+
+    <select id="HasGroupNumber" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.SG">
+        select Project.project_number_limit, COUNT(SG.group_id) AS Group_number
+        from SG, Project, `Group`
+        where `Group`.group_id = SG.group_id AND Project.project_id = `Group`.project_id
+        AND `Group`.group_id = #{group_id}
+    </select>
+
+    <insert id="GroupAddNewStudent" parameterType="String">
+        insert into SG (student_id, group_id) values(#{student_id}, #{group_id})
+    </insert>
+
 </mapper>

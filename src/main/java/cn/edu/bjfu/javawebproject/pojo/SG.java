@@ -11,4 +11,7 @@ public class SG {
     private String student_id;
     private String group_id;
     private String sg_is_delete;
+
+    private String Group_number;
+    private String project_number_limit;
 }

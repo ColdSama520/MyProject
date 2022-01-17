@@ -3,6 +3,7 @@ package cn.edu.bjfu.javawebproject.service;
 
 
 import cn.edu.bjfu.javawebproject.mapper.SGMapper;
+import cn.edu.bjfu.javawebproject.pojo.SG;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,14 @@ public class SGService {
 
     public void deleteSGByGroupId(String group_id) {
         sgMapper.deleteSGByGroupId(group_id);
+    }
+
+    public String HasGroupByStudentId(String student_id) {
+        return sgMapper.HasGroupByStudentId(student_id);
+    }
+
+    public SG HasGroupNumber(String group_id) {
+        return sgMapper.HasGroupNumber(group_id);
     }
 
 }
