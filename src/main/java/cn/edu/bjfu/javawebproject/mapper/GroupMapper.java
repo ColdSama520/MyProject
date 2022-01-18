@@ -20,6 +20,8 @@ public interface GroupMapper {
 
     void updateGroup(String group_id, String student_id);
 
+    void updateGroupProject(String project_id, String student_id);
+
     void addGroup(Group group);
 
     void addGroupAll(Group group);

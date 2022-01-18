@@ -25,4 +25,8 @@ public class SGService {
         return sgMapper.HasGroupNumber(group_id);
     }
 
+    public void GroupAddNewStudent(String student_id, String group_id) {
+        sgMapper.GroupAddNewStudent(student_id, group_id);
+    }
+
 }

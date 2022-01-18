@@ -47,6 +47,12 @@
         where group_id = #{group_id}
     </update>
 
+    <update id="updateGroupProject" parameterType="String">
+        update `Group`
+        set project_id = #{project_id}
+        where student_id = #{student_id}
+    </update>
+
     <delete id="deleteGroup" parameterType="String">
         delete from `Group`
         where project_id = #{project_id}

@@ -35,6 +35,10 @@ public class GroupService {
         groupMapper.updateGroup(group_id, student_id);
     }
 
+    public void updateGroupProject(String project_id, String student_id) {
+        groupMapper.updateGroupProject(project_id, student_id);
+    }
+
     public void addGroup(Group group) {
         groupMapper.addGroup(group);
     }

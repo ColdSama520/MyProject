@@ -36,4 +36,9 @@ public class SGController {
         return 1;
     }
 
+    @GetMapping("/GroupAddNewStudent")
+    public void GroupAddNewStudent(String student_id, String group_id) {
+        sgService.GroupAddNewStudent(student_id, group_id);
+    }
+
 }

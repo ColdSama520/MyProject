@@ -44,6 +44,11 @@ public class GroupController {
         groupService.updateGroup(group_id, student_id);
     }
 
+    @GetMapping("/updateGroupProject")
+    public void updateGroupProject(String project_id, String student_id) {
+        groupService.updateGroupProject(project_id, student_id);
+    }
+
     @GetMapping("/addGroup")
     public void addGroup(Group group) {
         groupService.addGroup(group);

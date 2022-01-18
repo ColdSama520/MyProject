@@ -15,4 +15,6 @@ public interface SGMapper {
 
     SG HasGroupNumber(String group_id);
 
+    void GroupAddNewStudent(String student_id, String group_id);
+
 }
