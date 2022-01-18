@@ -29,4 +29,8 @@ public class SGService {
         sgMapper.GroupAddNewStudent(student_id, group_id);
     }
 
+    public void deleteSGStudentByID(String student_id, String group_id) {
+        sgMapper.deleteSGStudentByID(student_id, group_id);
+    }
+
 }

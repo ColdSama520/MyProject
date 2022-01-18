@@ -41,4 +41,9 @@ public class SGController {
         sgService.GroupAddNewStudent(student_id, group_id);
     }
 
+    @GetMapping("/deleteSGStudentByID")
+    public void deleteSGStudentByID(String student_id, String group_id) {
+        sgService.deleteSGStudentByID(student_id, group_id);
+    }
+
 }

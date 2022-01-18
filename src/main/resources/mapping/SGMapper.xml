@@ -28,4 +28,9 @@
         insert into SG (student_id, group_id) values(#{student_id}, #{group_id})
     </insert>
 
+    <delete id="deleteSGStudentByID" parameterType="String">
+        delete from SG
+        where student_id = #{student_id}
+    </delete>
+
 </mapper>

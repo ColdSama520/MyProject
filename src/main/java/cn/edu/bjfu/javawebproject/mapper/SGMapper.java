@@ -17,4 +17,6 @@ public interface SGMapper {
 
     void GroupAddNewStudent(String student_id, String group_id);
 
+    void deleteSGStudentByID(String student_id, String group_id);
+
 }

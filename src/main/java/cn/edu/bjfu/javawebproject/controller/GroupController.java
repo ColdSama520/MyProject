@@ -39,6 +39,11 @@ public class GroupController {
         return groupService.selectCourseGroupSearch(group_id);
     }
 
+    @GetMapping("/IsGroupHeader")
+    public String IsGroupHeader(String group_id) {
+        return groupService.IsGroupHeader(group_id);
+    }
+
     @GetMapping("/updateGroup")
     public void updateGroup(String group_id, String student_id) {
         groupService.updateGroup(group_id, student_id);

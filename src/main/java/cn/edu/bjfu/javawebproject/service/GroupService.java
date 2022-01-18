@@ -31,6 +31,10 @@ public class GroupService {
         return groupMapper.selectCourseGroupSearch(group_id);
     }
 
+    public String IsGroupHeader(String group_id) {
+        return groupMapper.IsGroupHeader(group_id);
+    }
+
     public void updateGroup(String group_id, String student_id) {
         groupMapper.updateGroup(group_id, student_id);
     }
