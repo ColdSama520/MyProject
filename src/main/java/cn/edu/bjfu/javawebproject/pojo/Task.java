@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Task {
     private String task_id;
     private String task_name;
-    private String task_details; // 任务细节
+    private String task_details; // 任务详情
     private String task_stage_type;  // 所属任务阶段
     private String student_id;
     private String task_start_date;  //  任务生成时间
