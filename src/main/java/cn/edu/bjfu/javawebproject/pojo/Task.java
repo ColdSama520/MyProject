@@ -21,4 +21,6 @@ public class Task {
     private String task_type;   // 任务状态
     private String task_start_day;   //  任务拟开始时间
     private String task_start_time;   // 任务拟工作时长
+
+    private String student_name;
 }
