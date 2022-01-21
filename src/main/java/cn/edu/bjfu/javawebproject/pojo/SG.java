@@ -14,4 +14,5 @@ public class SG {
 
     private String Group_number;
     private String project_number_limit;
+    private String student_name;
 }

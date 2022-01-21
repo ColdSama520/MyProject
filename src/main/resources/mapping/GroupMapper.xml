@@ -32,6 +32,14 @@
         where group_id = #{group_id}
     </select>
 
+    <select id="selectGroupNameByTeacherId" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Group">
+        select group_id, group_name
+        from `Group`, Project, Course
+        where `Group`.project_id = Project.project_id AND Project.course_id = Course.course_id
+        AND group_name != 'cs' AND teacher_id = #{teacher_id}
+    </select>
+
     <select id="GroupCourseProjectById" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Group">
         select Project.project_name, `Group`.student_id, SG.student_id as student_member

@@ -16,6 +16,13 @@
         where student_id = #{student_id}
     </select>
 
+    <select id="selectGroupMemberByGroupId" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.SG">
+        select student_name, SG.student_id
+        from SG, Student
+        where SG.student_id = Student.student_id AND SG.group_id = #{group_id}
+    </select>
+
     <select id="HasGroupNumber" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.SG">
         select Project.project_number_limit, COUNT(SG.group_id) AS Group_number

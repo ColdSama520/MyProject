@@ -6,8 +6,12 @@ import cn.edu.bjfu.javawebproject.pojo.SC;
 import cn.edu.bjfu.javawebproject.pojo.SG;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface SGMapper {
+
+    List<SG> selectGroupMemberByGroupId(String group_id);
 
     void deleteSGByGroupId(String group_id);
 

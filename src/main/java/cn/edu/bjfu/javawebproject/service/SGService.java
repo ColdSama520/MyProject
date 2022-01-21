@@ -7,11 +7,17 @@ import cn.edu.bjfu.javawebproject.pojo.SG;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SGService {
 
     @Autowired
     SGMapper sgMapper;
+
+    public List<SG> selectGroupMemberByGroupId(String group_id) {
+        return sgMapper.selectGroupMemberByGroupId(group_id);
+    }
 
     public void deleteSGByGroupId(String group_id) {
         sgMapper.deleteSGByGroupId(group_id);

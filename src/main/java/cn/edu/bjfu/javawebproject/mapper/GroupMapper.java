@@ -18,6 +18,8 @@ public interface GroupMapper {
 
     List<Group> selectCourseGroupSearch(String group_id);
 
+    List<Group> selectGroupNameByTeacherId(String teacher_id);
+
     String IsGroupHeader(String group_id);
 
     void updateGroup(String group_id, String student_id);

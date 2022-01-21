@@ -15,4 +15,5 @@ public class Group {
 
     private String project_name;
     private String student_member;
+    private String teacher_id;
 }

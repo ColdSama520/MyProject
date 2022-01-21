@@ -31,6 +31,10 @@ public class GroupService {
         return groupMapper.selectCourseGroupSearch(group_id);
     }
 
+    public List<Group> selectGroupNameByTeacherId(String teacher_id) {
+        return groupMapper.selectGroupNameByTeacherId(teacher_id);
+    }
+
     public String IsGroupHeader(String group_id) {
         return groupMapper.IsGroupHeader(group_id);
     }
