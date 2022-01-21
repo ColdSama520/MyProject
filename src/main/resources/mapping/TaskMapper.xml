@@ -11,6 +11,13 @@
         where student_id = #{student_id}
     </select>
 
+    <select id="IsTaskTypeHasWorked" parameterType="String"
+            resultType="String">
+        select task_type
+        from Task
+        where task_id = #{task_id}
+    </select>
+
     <select id="TaskMessageGroupOthers" parameterType="String"
             resultType="cn.edu.bjfu.javawebproject.pojo.Task">
         select SG.student_id, student_name, task_name, task_stage_type, task_details, task_type
@@ -34,6 +41,13 @@
         where student_id = #{student_id} AND task_name = #{task_name}
     </select>
 
+    <select id="TaskMessageSearchByTaskType" parameterType="String"
+            resultType="cn.edu.bjfu.javawebproject.pojo.Task">
+        select *
+        from Task
+        where student_id = #{student_id} AND task_type = #{task_type}
+    </select>
+
     <insert id="addTask" parameterType="String">
         insert into Task (task_id, task_name, task_stage_type, task_details, task_type, task_start_date, student_id) values(#{task_id}, #{task_name}, #{task_stage_type}, #{task_details}, #{task_type}, #{task_start_date}, #{student_id})
     </insert>
@@ -41,6 +55,12 @@
     <update id="TaskMessageUpdateById" parameterType="String">
         update Task
         set task_name = #{task_name}, task_stage_type = #{task_stage_type}, task_details = #{task_details}, task_type = #{task_type}, task_alter_date = #{task_alter_date}
+        where task_id = #{task_id}
+    </update>
+
+    <update id="TaskMessageUpdateByTeacherR" parameterType="String">
+        update Task
+        set task_score = #{task_score}, task_reviews = #{task_reviews}, task_score_date = #{task_score_date}
         where task_id = #{task_id}
     </update>
 

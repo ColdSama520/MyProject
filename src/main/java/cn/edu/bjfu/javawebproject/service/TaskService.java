@@ -24,6 +24,10 @@ public class TaskService {
         return taskMapper.TaskMessageSearchByTaskName(student_id, task_name);
     }
 
+    public List<Task> TaskMessageSearchByTaskType(String student_id, String task_type) {
+        return taskMapper.TaskMessageSearchByTaskType(student_id, task_type);
+    }
+
     public List<Task> TaskMessageGroupOthers(String student_id) {
         return taskMapper.TaskMessageGroupOthers(student_id);
     }
@@ -32,8 +36,16 @@ public class TaskService {
         return taskMapper.TaskMessageSearchByStudent_Name(student_id, student_name);
     }
 
+    public String IsTaskTypeHasWorked(String task_id) {
+        return taskMapper.IsTaskTypeHasWorked(task_id);
+    }
+
     public void addTask(String task_id, String task_name, String task_stage_type, String task_details, String task_type, String task_start_date, String student_id) {
         taskMapper.addTask(task_id, task_name, task_stage_type, task_details, task_type, task_start_date, student_id);
+    }
+
+    public void TaskMessageUpdateByTeacherR(String task_score, String task_reviews, String task_score_date, String task_id) {
+        taskMapper.TaskMessageUpdateByTeacherR(task_score, task_reviews, task_score_date, task_id);
     }
 
     public void TaskMessageUpdateById(String task_name, String task_stage_type, String task_details, String task_type, String task_id, String task_alter_date) {
