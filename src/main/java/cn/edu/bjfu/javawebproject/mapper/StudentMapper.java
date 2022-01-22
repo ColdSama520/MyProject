@@ -17,6 +17,8 @@ public interface StudentMapper {
 
     void addStudent(Student student);
 
+    void addStudentByExcel(Student student);
+
     void updateStudent(Student student);
 
     void updateStudentName(Student student);

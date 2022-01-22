@@ -29,6 +29,10 @@
         insert into Student (student_id, student_name, student_class) values(#{student_id}, #{student_name}, #{student_class})
     </insert>
 
+    <insert id="addStudentByExcel" parameterType="cn.edu.bjfu.javawebproject.pojo.Student">
+        insert into Student (student_id, student_name, student_sex, student_class, student_is_delete) values(#{student_id}, #{student_name}, #{student_sex}, #{student_class}, '否')
+    </insert>
+
     <update id="updateStudent" parameterType="cn.edu.bjfu.javawebproject.pojo.Student">
         update Student
         set student_class = #{student_class}

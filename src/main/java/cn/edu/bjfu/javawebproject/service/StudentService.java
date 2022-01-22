@@ -30,6 +30,10 @@ public class StudentService {
         studentMapper.addStudent(student);
     }
 
+    public void addStudentByExcel(Student student) {
+        studentMapper.addStudentByExcel(student);
+    }
+
     public void updateStudent(Student student) {
         studentMapper.updateStudent(student);
     }
