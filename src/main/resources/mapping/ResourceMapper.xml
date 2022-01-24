@@ -19,6 +19,10 @@
         where case_id = #{case_id} AND resource_name = #{resource_name}
     </select>
 
+    <insert id="addResource" parameterType="cn.edu.bjfu.javawebproject.pojo.Resource">
+        insert into Resource (resource_id, case_id, resource_name, resource_type, resource_local, resource_date) values(#{resource_id}, #{case_id}, #{resource_name}, #{resource_type}, #{resource_local}, #{resource_date})
+    </insert>
+
     <delete id="deleteResourceById" parameterType="String">
         delete from Resource
         where resource_id = #{resource_id}

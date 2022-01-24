@@ -26,4 +26,9 @@ public class ResourceService {
         resourceMapper.deleteResourceById(resource_id);
     }
 
+
+    public void addResource(Resource resource) {
+        resourceMapper.addResource(resource);
+    }
+
 }

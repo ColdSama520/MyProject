@@ -15,4 +15,6 @@ public interface ResourceMapper {
 
     void deleteResourceById(String resource_id);
 
+    void addResource(Resource resource);
+
 }

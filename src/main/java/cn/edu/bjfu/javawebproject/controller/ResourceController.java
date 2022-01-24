@@ -35,4 +35,9 @@ public class ResourceController {
         resourceService.deleteResourceById(resource_id);
     }
 
+    @GetMapping("/addResource")
+    public void addResource(Resource resource) {
+        resourceService.addResource(resource);
+    }
+
 }
