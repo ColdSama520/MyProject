@@ -36,4 +36,9 @@ public class TeacherController {
     public List<Course> selectTeacherAllCourse(String teacher_id) {
         return teacherService.selectTeacherAllCourse(teacher_id);
     }
+
+    @GetMapping("/updateTeacher")
+    public void updateTeacher(Teacher teacher) {
+        teacherService.updateTeacher(teacher);
+    }
 }

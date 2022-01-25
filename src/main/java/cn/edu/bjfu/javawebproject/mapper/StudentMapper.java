@@ -23,4 +23,6 @@ public interface StudentMapper {
 
     void updateStudentName(Student student);
 
+    void updateStudentAll(Student student);
+
 }

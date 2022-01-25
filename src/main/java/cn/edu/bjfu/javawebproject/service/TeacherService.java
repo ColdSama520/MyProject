@@ -29,4 +29,8 @@ public class TeacherService {
     public List<Course> selectTeacherAllCourse(String teacher_id) {
         return teacherMapper.selectTeacherAllCourse(teacher_id);
     }
+
+    public void updateTeacher(Teacher teacher) {
+        teacherMapper.updateTeacher(teacher);
+    }
 }

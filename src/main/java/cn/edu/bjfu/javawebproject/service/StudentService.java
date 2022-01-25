@@ -42,4 +42,8 @@ public class StudentService {
         studentMapper.updateStudentName(student);
     }
 
+    public void updateStudentAll(Student student) {
+        studentMapper.updateStudentAll(student);
+    }
+
 }

@@ -18,4 +18,9 @@
         insert into Teacher (teacher_id,teacher_name,teacher_phone) values(#{teacher_id},#{teacher_name},#{teacher_phone})
     </insert>
 
+
+    <update id="updateTeacher" parameterType="cn.edu.bjfu.javawebproject.pojo.Teacher">
+        update Teacher set teacher_name = #{teacher_name}, teacher_phone = #{teacher_phone} where teacher_id = #{teacher_id}
+    </update>
+
 </mapper>

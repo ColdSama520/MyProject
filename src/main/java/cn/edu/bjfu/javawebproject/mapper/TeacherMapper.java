@@ -16,4 +16,6 @@ public interface TeacherMapper {
     void addTeacher(Teacher teacher);
 
     List<Course> selectTeacherAllCourse(String teacher_id);
+
+    void updateTeacher(Teacher teacher);
 }
